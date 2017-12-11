@@ -1,0 +1,68 @@
+<div class="row-fluid">
+    <div class="main-pane span12 report-wrapper">
+        <div class="report-container">
+            <div class="report-header">
+                <div class="report-header-left">
+                    <a href="javascript:void(0);"><img class="fa-bars" src="custom/themes/default/images/title.jpg" alt=""/></a>
+                    <span class="supper-clogo">
+                        <img src="custom/themes/default/images/logo.jpg" alt="logo" />
+                    </span>
+                    <div class="title">
+                        <p>Ventes quotidennes - Detaillees<br> 2018 : P2-S2 (jour) </p>
+                    </div>
+                </div>
+                 <div class="report-controls">
+                    <button class="btn"> &lt;SEMAINE&gt; </button>
+                    <button class="btn"> &lt;PERIOD&gt; </button>
+                    <button class="btn"> &lt;TRIMESTRE&gt; </button>
+                    <button class="btn"> &lt;ANN&#200;E&gt; </button>
+                </div>
+            </div>
+            <div class="report-section">
+                <div class="table-responsive">
+                    <table class="table" width="100%">
+                        <thead>
+                            <tr>
+                              <td colspan="3">
+                                 <h3> QUOTIDIEN </h3>
+                              </td>
+                              <td> </td>
+                              <td colspan="3">
+                                 <h3> CUMULATIF HEBDO </h3>
+                              </td>
+                              <td> </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <th> COUR.<br/>$ </th>
+                              <th> SPR<br/>DELTA % </th>
+                              <th> APR<br/>DELTA % </th>
+                              <th> MAGASIN</th>
+                              <th> COUR.<br/>$ </th>
+                              <th> SPR<br/>DELTA % </th>
+                              <th>  APR<br/>DELTA % </th>
+                              <th> TB/BD<br/>DELTA % </th>
+                           </tr>
+                           {{#each reportdata.shops}}
+                               {{#each this.data}}
+                                   <tr bgcolor={{this.row_color}} style="color:{{this.color}}; font-weight:{{this.font_weight}}">
+                                   <td> {{this.daily.COUR}} </td>
+                                   <td> {{this.daily.SPRDELTA}} </td>
+                                   <td> {{this.daily.APRDELTA}} </td>
+                                   <td> {{../this.shop_name}} </td>
+                                   <td> {{this.weekly.COUR}} </td>
+                                   <td> {{this.weekly.SPRDELTA}} </td>
+                                   <td> {{this.weekly.APRDELTA}} </td>
+                                   <td> {{this.weekly.TB_BDDELTA}} </td>
+                                </tr>
+                               {{/each}}
+                           {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
